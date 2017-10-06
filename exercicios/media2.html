@@ -1,0 +1,41 @@
+<!-- HTML -->
+<h1>Calculadora de média</h1>
+<form onsubmit="return responder()">
+    <label>Nota 1:</label>
+    <input id="num1" type="text"/>
+    
+    <br>
+    
+    <label>Nota 2:</label>
+    <input id="num2" type="text"/>
+
+    <br><br>
+
+    <button type="submit">Responder</button>
+</form>
+
+<p id="mensagem"></p>
+
+<!-- JAVASCRIPT -->
+<script>
+    function responder() {
+        var num1 = document.getElementById("num1").value;
+        var num2 = document.getElementById("num2").value;
+
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+
+        var resultado = calculoMedia(num1, num2);
+
+        var paragrafo = document.getElementById("mensagem");
+        paragrafo.textContent = "O resultado é: " + resultado;
+
+        return false;
+    }
+
+    function calculoMedia(nota1, nota2){
+        var resposta = (nota1 + nota2) / 2;
+        return resposta;
+    }
+        
+</script>
